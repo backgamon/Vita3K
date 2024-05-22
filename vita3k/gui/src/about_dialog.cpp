@@ -24,31 +24,32 @@
 namespace gui {
 
 // Add any new developer/contributor in alphabetic order
-static std::vector<const char *> developers_list = {
+static constexpr std::array developers_list = {
     "1whatleytay", "bookmist", "EXtremeExploit", "frangarcj", "IllusionMan1212",
     "KorewaWatchful", "Macdu", "pent0", "petmac", "Rinnegatamante",
     "sunho", "VelocityRa", "Zangetsu38"
 };
 
-static std::vector<const char *> contributors_list = {
-    "0nza1101", "0x8080", "AtticFinder65536", "BogdanTheGeek", "bsinky",
-    "bythos14", "cobalt2727", "CoffeeBrewer64", "Cpasjuste", "CreepNT",
-    "Croden1999", "d3m3vilurr", "Danik2343", "DerRM", "devnoname120",
-    "dima-xd", "dracc", "edwinr", "Felipefpl", "FlotterCodername",
-    "Frain-Breeze", "francois-berder", "FromAlaska", "Ghabry", "hobyst",
-    "HuanJiCanShang", "ichisadashioko", "illusion0001", "isJuhn",
-    "jdoe0000000", "jlachniet", "Johnnynator", "johnothwolo", "Kaitul",
-    "kd-11", "KhoraLee", "lephilousophe", "lybxlpsv", "MaddTheSane",
-    "Margen67", "merryhime", "mirusu400", "mkersey", "mrcmunir",
-    "muemart", "NabsiYa", "NeveHanter", "ngeojiajun", "Nicba1010",
-    "nishinji", "nn9dev", "Princess-of-Sleeping", "qurious-pixel", "Ristellise",
-    "scribam", "sitiom", "smitdylan2001", "SonicMastr", "Talkashie",
-    "Tarik366", "tcoyvwac", "thp", "TingPing", "TomasKralCZ",
-    "totlmstr", "wfscans", "xero-lib", "xerpi", "xyzz",
-    "yousifd", "Yunotchi"
+static constexpr std::array contributors_list = {
+    "0nza1101", "0x8080", "AtticFinder65536", "Avellea", "blackbird806",
+    "BogdanTheGeek", "bsinky", "bythos14", "cobalt2727", "CoffeeBrewer64", "Cpasjuste",
+    "Creeot", "CreepNT", "Croden1999", "d3m3vilurr", "Danik2343", "darkash",
+    "DerRM", "devnoname120", "dima-xd", "dracc", "edwinr", "FantasyGmm",
+    "Felipefpl", "FlotterCodername", "Frain-Breeze", "francois-berder", "FromAlaska",
+    "Ghabry", "hobyst", "HuanJiCanShang", "ichisadashioko", "illusion0001",
+    "isJuhn", "jdoe0000000", "jlachniet", "Johnnynator", "johnothwolo", "Kaitul",
+    "KaneDbD", "kd-11", "KhoraLee", "Kitakatarashima", "lephilousophe",
+    "Lupiax", "lybxlpsv", "MaddTheSane", "Margen67", "mavethee", "merryhime",
+    "mirusu400", "mkersey", "mrcmunir", "muemart", "NeveHanter", "ngeojiajun",
+    "Nicba1010", "nishinji", "nn9dev", "Nyabsi", "oltolm", "pedrozzz0",
+    "Princess-of-Sleeping", "qurious-pixel", "redpolline", "Ristellise",
+    "saturnsky", "scribam", "sitiom", "slipcounter", "smitdylan2001",
+    "SonicMastr", "Talkashie", "Tarik366", "tcoyvwac", "thp", "TingPing",
+    "TomasKralCZ", "totlmstr", "Valeriy-Lednikov", "wfscans", "xero-lib",
+    "xerpi", "xperia64", "xsamueljr", "xyzz", "yousifd", "Yunotchi"
 };
 
-static std::vector<const char *> supporters_list = {
+static constexpr std::array supporters_list = {
     "j0hnnybrav0", "TacoOblivion", "Undeadbob", "uplush"
 };
 
@@ -132,9 +133,9 @@ void draw_about_dialog(GuiState &gui, EmuEnvState &emuenv) {
     if (ImGui::BeginTable("##vita3k_staff_table", STAFF_COLUMN_COUNT, ImGuiTableFlags_ScrollY | ImGuiTableFlags_BordersV | ImGuiTableFlags_NoSavedSettings, STAFF_LIST_SIZE)) {
         ImGui::TableSetupScrollFreeze(1, 1);
         ImGui::PushStyleColor(ImGuiCol_Text, GUI_COLOR_TEXT_TITLE);
-        ImGui::TableSetupColumn(lang["developers"].c_str(), ImGuiTableColumnFlags_NoHide, STAFF_COLUMN_SIZE);
-        ImGui::TableSetupColumn(lang["contributors"].c_str(), ImGuiTableColumnFlags_NoHide, STAFF_COLUMN_SIZE);
-        ImGui::TableSetupColumn(lang["supporters"].c_str(), ImGuiTableColumnFlags_NoHide, STAFF_COLUMN_SIZE);
+        ImGui::TableSetupColumn(lang["developers"].c_str(), ImGuiTableColumnFlags_NoHide | ImGuiTableColumnFlags_WidthFixed, STAFF_COLUMN_SIZE);
+        ImGui::TableSetupColumn(lang["contributors"].c_str(), ImGuiTableColumnFlags_NoHide | ImGuiTableColumnFlags_WidthFixed, STAFF_COLUMN_SIZE);
+        ImGui::TableSetupColumn(lang["supporters"].c_str(), ImGuiTableColumnFlags_NoHide | ImGuiTableColumnFlags_WidthFixed, STAFF_COLUMN_SIZE);
         ImGui::TableHeadersRow();
         ImGui::PopStyleColor();
         ImGui::TableNextRow();
